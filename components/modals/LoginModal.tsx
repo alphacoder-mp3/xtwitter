@@ -1,6 +1,6 @@
-// import { signIn } from 'next-auth/react';
+import { signIn } from 'next-auth/react';
 import { useCallback, useState } from 'react';
-import { useToast } from '@/components/ui/use-toast';
+import { toast } from 'sonner';
 
 import useLoginModal from '@/hooks/useLoginModal';
 // import useRegisterModal from '@/hooks/useRegisterModal';
@@ -14,7 +14,6 @@ import { DialogContent } from '../ui/dialog';
 const LoginModal = () => {
   const loginModal = useLoginModal();
   // const registerModal = useRegisterModal();
-  const { toast } = useToast();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
