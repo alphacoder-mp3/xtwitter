@@ -3,7 +3,7 @@ import { useCallback, useState } from 'react';
 import { toast } from 'sonner';
 
 import useLoginModal from '@/hooks/useLoginModal';
-// import useRegisterModal from '@/hooks/useRegisterModal';
+import useRegisterModal from '@/hooks/useRegisterModal';
 
 import { Input } from '../ui/input';
 import { Dialog } from '../ui/dialog';
@@ -13,7 +13,7 @@ import { DialogContent } from '../ui/dialog';
 
 const LoginModal = () => {
   const loginModal = useLoginModal();
-  // const registerModal = useRegisterModal();
+  const registerModal = useRegisterModal();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
