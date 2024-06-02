@@ -1,4 +1,4 @@
-// import { signOut } from 'next-auth/react';
+import { signOut } from 'next-auth/react';
 import { BiLogOut } from 'react-icons/bi';
 import { BsHouseFill, BsBellFill } from 'react-icons/bs';
 import { FaUser } from 'react-icons/fa';
@@ -9,9 +9,11 @@ import SidebarItem from './SidebarItem';
 import SidebarLogo from './SidebarLogo';
 import SidebarTweetButton from './SidebarTweetButton';
 
-const Sidebar = () => {
-  //   const { data: currentUser } = useCurrentUser();
-
+const Sidebar = async () => {
+  // const { data: currentUser } = useCurrentUser();
+  // const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+  // const { data: currentUser } = await fetch(`${baseUrl}/api/current`);
+  // console.log({ currentUser });
   const items = [
     {
       icon: BsHouseFill,
@@ -23,13 +25,12 @@ const Sidebar = () => {
       label: 'Notifications',
       href: '/notifications',
       auth: true,
-      //   alert: currentUser?.hasNotification
+      // alert: currentUser?.hasNotification,
     },
     {
       icon: FaUser,
       label: 'Profile',
-      //   href: `/users/${currentUser?.id}`,
-      href: '/users/123',
+      // href: `/users/${currentUser?.id}`,
       auth: true,
     },
   ];
@@ -49,9 +50,15 @@ const Sidebar = () => {
               label={item.label}
             />
           ))}
-          {/* {currentUser && <SidebarItem onClick={() => signOut()} icon={BiLogOut} label="Logout" />} */}
+          {/* {currentUser && (
+            <SidebarItem
+              onClick={() => signOut()}
+              icon={BiLogOut}
+              label="Logout"
+            />
+          )} */}
           <SidebarItem
-            // onClick={() => signOut()}
+            onClick={() => signOut()}
             icon={BiLogOut}
             label="Logout"
           />
